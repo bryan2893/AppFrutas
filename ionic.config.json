@@ -1,5 +1,7 @@
 {
   "name": "AppFrutas",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
