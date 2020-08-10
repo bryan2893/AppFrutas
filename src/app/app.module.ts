@@ -11,9 +11,12 @@ import { AppRoutingModule } from './app-routing.module';
 import {Camera} from '@ionic-native/camera/ngx';
 
 import {HttpClientModule} from '@angular/common/http';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { ModalPageComponent } from './modal-page/modal-page.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ModalPageComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
   providers: [

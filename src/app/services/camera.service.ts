@@ -14,6 +14,8 @@ export class CameraService {
     const options: CameraOptions = {
       quality: 100,
       destinationType: 0,
+      targetHeight: 150,
+      targetWidth: 150,
       encodingType: this.camera.EncodingType.JPEG,
       mediaType: this.camera.MediaType.PICTURE
     }

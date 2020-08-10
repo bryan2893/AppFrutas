@@ -3,6 +3,7 @@ import {CameraService} from '../services/camera.service';
 import { FruitsApiService } from '../services/fruits-api.service';
 import { ModalController } from '@ionic/angular';
 import {ModalPageComponent } from '../modal-page/modal-page.component';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,7 @@ import {ModalPageComponent } from '../modal-page/modal-page.component';
 export class HomePage {
   src = "";
 
-  constructor(private cameraService:CameraService, private fruitService: FruitsApiService, private modalController: ModalController) {
+  constructor(private cameraService:CameraService, private fruitService: FruitsApiService, private modalController: ModalController, public toastController: ToastController) {
   }
 
   async takePicture(){
@@ -22,11 +23,11 @@ export class HomePage {
       async results => {
         await this.presentModal(results);
       },
-      error => console.log(error)
+      error => this.presentToast(error.message)
     );
 
   }catch(error){
-    console.log(error);
+    await this.presentToast(error.message);
   }
     
   }
@@ -41,5 +42,11 @@ export class HomePage {
     return await modal.present();
   }
 
-
+  async presentToast(message: string) {
+    const toast = await this.toastController.create({
+      message: message,
+      duration: 2000
+    });
+    toast.present();
+  }
 }
