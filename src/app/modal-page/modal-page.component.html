@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons fill="outline" slot="end">
+      <ion-button (click)="dismiss()">
+        Cerrar
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-item>
+  <ion-label>Fruta: {{fruitInfo.name}}</ion-label>
+</ion-item>
+
+<ion-item>
+  <ion-label>Probabilidad: {{confidence}}</ion-label>
+</ion-item>
+
+<ion-item>
+  <ion-label>Peso: {{fruitInfo.weight}}g</ion-label>
+</ion-item>
+
+<ion-item>
+  <ion-label>Calorias: {{fruitInfo.calories}}</ion-label>
+</ion-item>
+
+<ion-item>
+  <ion-label>Carbohidratos: {{fruitInfo.carbohydrates}}</ion-label>
+</ion-item>
+
+<ion-item>
+  <ion-label>Azucares: {{fruitInfo.sugar}}</ion-label>
+</ion-item>
